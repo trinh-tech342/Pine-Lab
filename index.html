@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Công Thức Xà Phòng Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🧼 Sổ Tay Làm Xà Phòng</h1>
+        
+        <form id="soap-form">
+            <div class="grid-container">
+                <div class="form-group">
+                    <label>Tên mẻ xà phòng:</label>
+                    <input type="text" id="soap-name" placeholder="Ví dụ: Lavender Dream" required>
+                </div>
+                <div class="form-group">
+                    <label>Ngày làm:</label>
+                    <input type="date" id="make-date" required>
+                </div>
+                <div class="form-group">
+                    <label>Superfat (%):</label>
+                    <input type="number" id="superfat" value="5" min="0" max="20">
+                </div>
+                <div class="form-group">
+                    <label>Ngày dự kiến sử dụng:</label>
+                    <input type="date" id="cure-date">
+                </div>
+            </div>
+
+            <div class="ingredient-section">
+                <h3>Chi tiết nguyên liệu</h3>
+                <div class="table-responsive">
+                    <table id="ingredient-table">
+                        <thead>
+                            <tr>
+                                <th>Nguyên liệu</th>
+                                <th>Khối lượng (g)</th>
+                                <th>Hạn dùng</th>
+                                <th>Ngày mua</th>
+                                <th>Giá (VNĐ)</th>
+                                <th>Nhà cung cấp</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="ingredient-body">
+                            </tbody>
+                    </table>
+                </div>
+                <button type="button" id="add-row" class="btn-secondary">+ Thêm nguyên liệu</button>
+            </div>
+
+            <div class="grid-container" style="margin-top: 20px;">
+                <div class="form-group">
+                    <label>Hương thơm:</label>
+                    <input type="text" id="scent" placeholder="Tinh dầu sả chanh...">
+                </div>
+                <div class="form-group">
+                    <label>Chất lượng:</label>
+                    <select id="quality">
+                        <option value="5">⭐⭐⭐⭐⭐</option>
+                        <option value="4">⭐⭐⭐⭐</option>
+                        <option value="3">⭐⭐⭐</option>
+                        <option value="2">⭐⭐</option>
+                        <option value="1">⭐</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" id="btn-save">Lưu vào Google Sheet</button>
+        </form>
+        <div class="status" id="status-msg"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
